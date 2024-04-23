@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-laundry-room',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './laundry-room.component.css'
 })
 export class LaundryRoomComponent {
-
+  Force() {
+    console.log('ForceUpdate has been clicked');
+  }
 }

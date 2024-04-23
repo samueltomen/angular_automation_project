@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-heat-pump',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './heat-pump.component.css'
 })
 export class HeatPumpComponent {
-
+  Force() {
+    console.log('ForceUpdate has been clicked');
+  }
 }

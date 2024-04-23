@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-garage',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './garage.component.css'
 })
 export class GarageComponent {
-
+  Force() {
+    console.log('ForceUpdate has been clicked');
+  }
 }
