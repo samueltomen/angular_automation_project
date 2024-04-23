@@ -6,6 +6,12 @@ import {Component} from '@angular/core';
   styleUrl: './garage.component.css'
 })
 export class GarageComponent {
+  isActive: boolean = false;
+
+  toggleDotColor() {
+    this.isActive = !this.isActive;
+  }
+
   Force() {
     console.log('ForceUpdate has been clicked');
   }

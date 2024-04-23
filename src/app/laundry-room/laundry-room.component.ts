@@ -6,6 +6,12 @@ import {Component} from '@angular/core';
   styleUrl: './laundry-room.component.css'
 })
 export class LaundryRoomComponent {
+  isActive: boolean = false;
+
+  toggleDotColor() {
+    this.isActive = !this.isActive;
+  }
+
   Force() {
     console.log('ForceUpdate has been clicked');
   }
