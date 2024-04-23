@@ -1,1 +1,4 @@
-<p>timer works!</p>
+<div>
+  <h1>{{ hours }}:{{ minutes | number: '2.0' }}</h1>
+  <button (click)="incrementTime()" class="btn btn-primary">+ 30 minutes</button>
+</div>
