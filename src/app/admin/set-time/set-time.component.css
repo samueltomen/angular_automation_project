@@ -1,0 +1,23 @@
+.time-setter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.input-group {
+  width: auto; /* Auto permet aux input groups de ne prendre que l'espace nécessaire */
+}
+
+.form-label {
+  margin-bottom: 10px;
+  width: 100%; /* Assure que le label prend la pleine largeur */
+}
+
+button {
+  width: auto; /* Ajustez la largeur des boutons + et - si nécessaire */
+}
+
+.d-flex > * {
+  margin-right: 10px; /* Espace entre les éléments dans le flex container */
+}
