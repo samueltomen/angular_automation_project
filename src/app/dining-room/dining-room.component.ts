@@ -6,6 +6,12 @@ import {Component} from '@angular/core';
   styleUrl: './dining-room.component.css'
 })
 export class DiningRoomComponent {
+  isActive: boolean = false;
+
+  toggleDotColor() {
+    this.isActive = !this.isActive;
+  }
+
   Force() {
     console.log('ForceUpdate has been clicked');
   }
