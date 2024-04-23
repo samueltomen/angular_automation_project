@@ -21,6 +21,8 @@ import {NgOptimizedImage} from "@angular/common";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatIcon} from "@angular/material/icon";
 import { DotComponent } from './dot/dot.component';
+import { AdminComponent } from './admin/admin.component';
+import { SetTimeComponent } from './admin/set-time/set-time.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { DotComponent } from './dot/dot.component';
     TimerComponent,
     LogComponent,
     DotComponent,
+    AdminComponent,
+    SetTimeComponent,
   ],
   imports: [
     BrowserModule,
