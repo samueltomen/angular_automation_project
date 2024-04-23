@@ -20,6 +20,7 @@ import {LogComponent} from './log/log.component';
 import {NgOptimizedImage} from "@angular/common";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatIcon} from "@angular/material/icon";
+import { DotComponent } from './dot/dot.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {MatIcon} from "@angular/material/icon";
     PoolComponent,
     TimerComponent,
     LogComponent,
+    DotComponent,
   ],
   imports: [
     BrowserModule,
