@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,15 @@ export class TimeService {
 
   set hours(value: number) {
     this._hours = value;
+    this._timeChange.next({hours: this._hours, minutes: this._minutes});
   }
 
   private _minutes: number = 0;
+
+  private _timeChange = new BehaviorSubject<{ hours: number, minutes: number }>({
+    hours: this._hours,
+    minutes: this._minutes
+  });
 
   get minutes(): number {
     return this._minutes;
@@ -25,7 +32,13 @@ export class TimeService {
 
   set minutes(value: number) {
     this._minutes = value;
+    this._timeChange.next({hours: this._hours, minutes: this._minutes});
   }
+
+  get timeChanges() {
+    return this._timeChange.asObservable();
+  }
+
 
   incrementTime(): void {
     this._minutes += 30;
@@ -36,5 +49,6 @@ export class TimeService {
     if (this._hours > 23) {
       this._hours = 0;
     }
+    this._timeChange.next({hours: this._hours, minutes: this._minutes});
   }
 }
