@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {TimeService} from "../time.service";
 
 @Component({
   selector: 'app-timer',
@@ -6,17 +7,11 @@ import {Component} from '@angular/core';
   styleUrl: './timer.component.css'
 })
 export class TimerComponent {
-  hours: number = 0;
-  minutes: number = 0;
+
+  constructor(public timeService: TimeService) {
+  }
 
   incrementTime(): void {
-    this.minutes += 30;
-    if (this.minutes >= 60) {
-      this.minutes -= 60;
-      this.hours += 1;
-    }
-    if (this.hours > 23) {
-      this.hours = 0;
-    }
+    this.timeService.incrementTime();
   }
 }
