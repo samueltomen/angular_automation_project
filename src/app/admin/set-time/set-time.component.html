@@ -1,0 +1,16 @@
+<div class="time-setter">
+  <label class="form-label">{{ name }}</label>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="input-group me-2">
+      <button (click)="adjustTime('startTime', -30)" class="btn btn-outline-secondary" type="button">-</button>
+      <input [(ngModel)]="startTime" class="form-control" name="startTime" type="time">
+      <button (click)="adjustTime('startTime', 30)" class="btn btn-outline-secondary" type="button">+</button>
+    </div>
+    <div class="input-group me-2">
+      <button (click)="adjustTime('endTime', -30)" class="btn btn-outline-secondary" type="button">-</button>
+      <input [(ngModel)]="endTime" class="form-control" name="endTime" type="time">
+      <button (click)="adjustTime('endTime', 30)" class="btn btn-outline-secondary" type="button">+</button>
+    </div>
+    <button (click)="setTime()" class="btn btn-primary">Fixer l'heure</button>
+  </div>
+</div>
