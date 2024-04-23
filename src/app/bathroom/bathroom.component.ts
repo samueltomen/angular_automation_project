@@ -12,7 +12,4 @@ export class BathroomComponent {
     this.isActive = !this.isActive;
   }
 
-  Force() {
-    console.log('ForceUpdate has been clicked');
-  }
 }

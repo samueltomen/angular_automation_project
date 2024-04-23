@@ -18,11 +18,10 @@ import {ForceButtonComponent} from './force-button/force-button.component';
 import {TimerComponent} from './timer/timer.component';
 import {LogComponent} from './log/log.component';
 import {NgOptimizedImage} from "@angular/common";
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {MatIcon} from "@angular/material/icon";
-import { DotComponent } from './dot/dot.component';
-import { AdminComponent } from './admin/admin.component';
-import { SetTimeComponent } from './admin/set-time/set-time.component';
+import {AdminComponent} from './admin/admin.component';
+import {SetTimeComponent} from './admin/set-time/set-time.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { SetTimeComponent } from './admin/set-time/set-time.component';
     PoolComponent,
     TimerComponent,
     LogComponent,
-    DotComponent,
     AdminComponent,
     SetTimeComponent,
   ],
@@ -55,4 +53,5 @@ import { SetTimeComponent } from './admin/set-time/set-time.component';
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
