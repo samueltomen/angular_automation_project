@@ -18,6 +18,8 @@ import {ForceButtonComponent} from './force-button/force-button.component';
 import {TimerComponent} from './timer/timer.component';
 import {LogComponent} from './log/log.component';
 import {NgOptimizedImage} from "@angular/common";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatIcon} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -35,9 +37,16 @@ import {NgOptimizedImage} from "@angular/common";
     TimerComponent,
     LogComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgOptimizedImage, ForceButtonComponent, ForceButtonComponent],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgOptimizedImage,
+    ForceButtonComponent,
+    ForceButtonComponent,
+    MatIcon,
+  ],
+  providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
