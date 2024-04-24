@@ -1,6 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {Subscription} from "rxjs";
 import {TimeService} from "../time.service";
+import {LogService} from "../log.service";
 
 @Component({
   selector: 'app-pool',
@@ -9,11 +10,17 @@ import {TimeService} from "../time.service";
 })
 export class PoolComponent implements OnDestroy {
   isActive: boolean = false;
+  name: string = 'Piscine';
   private readonly timeSubscription: Subscription;
 
-  constructor(public timeService: TimeService) {
+  constructor(public timeService: TimeService, private logService: LogService) {
     this.timeSubscription = this.timeService.timeChanges.subscribe(({hours, minutes}) => {
-      this.isActive = !(hours >= 19 || (hours === 0 && minutes < 1));
+      const newIsActive = !(hours >= 19 || (hours === 0 && minutes < 1));
+      if (newIsActive != this.isActive) {
+        this.logService.addMessage(this.name, hours, minutes, newIsActive);
+
+      }
+      this.isActive = newIsActive;
     });
   }
 
