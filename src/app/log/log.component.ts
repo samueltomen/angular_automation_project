@@ -1,35 +1,29 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from "rxjs";
+import {LogService} from "../log.service";
 
 @Component({
   selector: 'app-log',
   templateUrl: './log.component.html',
   styleUrl: './log.component.css'
 })
-export class LogComponent {
+export class LogComponent implements OnInit, OnDestroy {
+  messages: string[] = [];
+  private messageSubscription: Subscription;
 
-  bathroom = {
-    on:'Salle de bain allumée',
-    off:'Salle de bain éteinte'
-  };
-  livingRoom = { 
-    on: 'Salle à manger allumée', 
-    off: 'Salle à manger éteinte' 
-  };
-  garage = { 
-    on: 'Garage allumé', 
-    off: 'Garage éteint' 
-  };
-  heatPump = { 
-    on: 'Pompe à chaleur allumée', 
-    off: 'Pompe à chaleur éteinte' 
-  };
-  laundryRoom = { 
-    on: 'Buanderie allumée', 
-    off: 'Buanderie éteinte' 
-  };
-  swimmingPool = { 
-    on: 'Piscine allumée', 
-    off: 'Piscine éteinte' 
-  };
+  constructor(private logService: LogService) {
+  }
+
+  ngOnInit() {
+    this.messageSubscription = this.logService.currentMessages.subscribe(messages => {
+      this.messages = messages;
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.messageSubscription) {
+      this.messageSubscription.unsubscribe();
+    }
+  }
 
 }
