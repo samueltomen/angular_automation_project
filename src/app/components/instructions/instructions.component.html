@@ -1,0 +1,12 @@
+<div>
+  <h2>Ajouter une Instruction</h2>
+  <form (ngSubmit)="addInstruction()">
+    <input [(ngModel)]="newInstruction" name="instruction" placeholder="Entrez une instruction" required type="text">
+    <app-force-button (btnClick)="addInstruction()" text="Valider"></app-force-button>
+  </form>
+
+  <h3>Instructions Existantes</h3>
+  <ul>
+    <li *ngFor="let instr of instructions">{{ instr }}</li>
+  </ul>
+</div>
