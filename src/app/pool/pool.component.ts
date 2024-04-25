@@ -1,7 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {Subscription} from "rxjs";
-import {TimeService} from "../time.service";
-import {LogService} from "../log.service";
+import {TimeService} from "../services/time.service";
+import {LogService} from "../services/log.service";
 
 @Component({
   selector: 'app-pool',

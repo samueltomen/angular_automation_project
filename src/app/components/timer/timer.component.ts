@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {TimeService} from "../time.service";
+import {TimeService} from "../../services/time.service";
 
 @Component({
   selector: 'app-timer',
