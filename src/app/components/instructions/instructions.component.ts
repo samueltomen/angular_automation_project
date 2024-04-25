@@ -12,8 +12,7 @@ export class InstructionsComponent {
   addInstruction(): void {
     if (this.newInstruction) {
       this.instructions.push(this.newInstruction);
-      this.newInstruction = ''; // Réinitialise l'input après l'ajout
-      // Simuler l'enregistrement dans un fichier en local storage ou envoyer à un backend
+      this.newInstruction = ''; 
     }
   }
 }
