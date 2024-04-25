@@ -14,6 +14,6 @@ export class LogService {
 
   addMessage(name: string, hours: number, minutes: number, isActive: boolean) {
     const currentMessages = this.messageSource.value;
-    this.messageSource.next([...currentMessages, `${name} ${isActive ? 'activé' : 'désactivé'} à ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`]);
+    this.messageSource.next([...currentMessages, `${name} ${isActive ? 'activé ' : 'désactivé '}à ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`]);
   }
 }
